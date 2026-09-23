@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-terracotta-400: #d67554;
+  --color-terracotta-500: #c15f3c;
+  --color-terracotta-600: #a84c2b;
+  --color-terracotta-700: #8f3c1e;
+  
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+}
+
+/* Custom base styles for themes */
+@layer base {
+  :root {
+    --bg-color: #fafafa;
+    --surface-color: #ffffff;
+    --surface-elevated: #f4f4f5;
+    --text-primary: #111111;
+    --text-secondary: #555555;
+    --border-color: #e5e5e5;
+    --accent-color: #c15f3c;
+    --accent-hover: #a84c2b;
+  }
+
+  .dark {
+    --bg-color: #0a0a0b;
+    --surface-color: #141418;
+    --surface-elevated: #1e1e24;
+    --text-primary: #f0f0f0;
+    --text-secondary: #a0a0a8;
+    --border-color: #2a2a32;
+    --accent-color: #c15f3c;
+    --accent-hover: #d67554;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Utility classes mapped to our CSS variables */
+@utility text-secondary {
+  color: var(--text-secondary);
+}
+
+@utility bg-surface {
+  background-color: var(--surface-color);
+}
+
+@utility bg-surface-elevated {
+  background-color: var(--surface-elevated);
+}
+
+@utility border-subtle {
+  border-color: var(--border-color);
+}
+
+@utility text-accent {
+  color: var(--accent-color);
+}
+
+@utility bg-accent {
+  background-color: var(--accent-color);
+}
+
+@utility bg-accent-hover {
+  background-color: var(--accent-hover);
+}
